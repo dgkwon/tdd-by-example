@@ -126,4 +126,18 @@ class MoneyTest {
         Money result2 = tenFrancs.reduce(bank, "USD");
         assertEquals(Money.dollar(5), result2);
     }
+
+    @Test
+    void testMoneyReduce2() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFrancs = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+
+        Money result = fiveBucks.reduce(bank, "USD");
+        assertEquals(Money.dollar(5), fiveBucks);
+
+        Money result2 = tenFrancs.reduce(bank, "USD");
+        assertEquals(Money.dollar(5), result2);
+    }
 }
