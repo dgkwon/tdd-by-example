@@ -121,7 +121,7 @@ class MoneyTest {
         bank.addRate("CHF", "USD", 2);
 
         Money result = fiveBucks.reduce(bank, "USD");
-        assertEquals(Money.dollar(5), fiveBucks);
+        assertEquals(Money.dollar(5), result);
 
         Money result2 = tenFrancs.reduce(bank, "USD");
         assertEquals(Money.dollar(5), result2);
@@ -135,7 +135,7 @@ class MoneyTest {
         bank.addRate("CHF", "USD", 2);
 
         Money result = fiveBucks.reduce(bank, "USD");
-        assertEquals(Money.dollar(5), fiveBucks);
+        assertEquals(Money.dollar(5), result);
 
         Money result2 = tenFrancs.reduce(bank, "USD");
         assertEquals(Money.dollar(5), result2);
